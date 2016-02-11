@@ -1,5 +1,5 @@
 
-FROM cwkinard/selenium-base:2.50.0 
+FROM cwkinard/selenium-base-pi:2.50.0 
 MAINTAINER Will Kinard "wilsonkinard@gmail.com"
 
 EXPOSE 4444
@@ -15,7 +15,10 @@ ENV GRID_UNREGISTER_IF_STILL_DOWN_AFTER 30000
 
 COPY generate_config /opt/selenium/generate_config
 COPY entry_point.sh /opt/bin/entry_point.sh
-RUN chown -R seluser /opt/selenium
+RUN chown -R seluser /opt/selenium && \
+    chown seluser /opt/bin/entry_point.sh && \
+    chmod 744 /opt/selenium/generate_config && \
+    chmod 744 /opt/bin/entry_point.sh
 
 USER seluser
 
