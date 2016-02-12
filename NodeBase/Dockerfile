@@ -1,5 +1,5 @@
 
-FROM cwkinard/selenium-base:2.50.0
+FROM cwkinard/selenium-base-pi:2.50.0
 MAINTAINER Will Kinard "wilsonkinard@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -14,7 +14,7 @@ RUN echo "US/Eastern" | sudo tee /etc/timezone \
   && dpkg-reconfigure --frontend noninteractive tzdata
 
 #==============
-# VNC and Xvfb
+# Xvfb
 #==============
 RUN apt-get update -qqy \
   && apt-get -qqy install \
