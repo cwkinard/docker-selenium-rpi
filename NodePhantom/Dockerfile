@@ -4,4 +4,7 @@ MAINTAINER Will Kinard "wilsonkinard@gmail.com"
 
 COPY join-hub.sh /usr/local/phantomjs/
 
+RUN chmod 744 /usr/local/phantomjs/join-hub.sh
+
+
 ENTRYPOINT [ "sh", "-c", "/usr/local/phantomjs/join-hub.sh" ]
