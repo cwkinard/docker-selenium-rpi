@@ -1,6 +1,7 @@
 FROM cwkinard/phantomjs-pi 
 MAINTAINER Will Kinard "wilsonkinard@gmail.com"
 
+RUN apt-get install -y netcat 
 
 COPY join-hub.sh /usr/local/phantomjs/
 
